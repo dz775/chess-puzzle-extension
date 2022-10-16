@@ -1,0 +1,21 @@
+{
+    "name": "chess.com puzzle solver",
+    "description": "chess.com puzzle solver",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["https://www.chessdb.cn/*","https://*.chess.com/*","https://*/"],
+    "content_scripts": [{
+        "matches": ["https://*.chess.com/*"],
+        "js": ["contentScript.js"],
+        "css": ["popup.css"]
+    }],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_title": "chess.com puzzle solver",
+      "default_icon": "icon-32.png",
+      "default_popup": "popup.html"
+    }
+}
